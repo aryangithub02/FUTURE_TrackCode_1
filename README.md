@@ -89,8 +89,8 @@ http://localhost:3000
 Example:
 ```json
 {
-  "name": "John Doe",
-  "email": "john@example.com",
+  "name": "Aryan Moghare",
+  "email": "aryanmotghare92@gmail.com",
   "message": "Hello, this is a test message!"
 }
 ```
@@ -111,9 +111,9 @@ _Add screenshots of your portfolio UI here_
 
 ## 👨‍💻 Author
 - **Aryan Motghare**
-- [LinkedIn](https://linkedin.com/in/your-profile)
-- [GitHub](https://github.com/your-username)
-- [Portfolio](https://your-portfolio-link.com)
+- [LinkedIn](https://linkedin.com/in/aryan-motghare)
+- [GitHub](https://github.com/aryangithub02)
+- [Portfolio](https://aryanmotghareresume.netlify.app/)
 
 ---
 
