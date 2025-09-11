@@ -1,52 +1,88 @@
+// server.js
 import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
+import basicAuth from 'express-basic-auth';
+import contactRoutes from "./routes/contacts.js"; 
+import feedbackRoutes from './routes/feedbacks.js';  // MongoDB feedback routes
 
 const app = express();
-const PORT = 4000; // ✅ Use 4000 for backend
+const PORT = 4000; // Backend port
 
+// -------------------- MIDDLEWARE --------------------
 app.use(cors());
 app.use(express.json());
 
-mongoose.connect("mongodb://127.0.0.1:27017/portfolio")
-  .then(() => console.log("✅ MongoDB Connected"))
-  .catch((err) => console.error("MongoDB Error:", err));
+// -------------------- ROUTES --------------------
+app.use('/api/feedback', feedbackRoutes);   // Feedback API (MongoDB)
+app.use("/api/contact", contactRoutes);     // Contact API
 
-const contactSchema = new mongoose.Schema({
-  name: String,
-  email: String,
-  message: String,
-  createdAt: { type: Date, default: Date.now }
+// -------------------- AUTH MIDDLEWARE --------------------
+const authMiddleware = basicAuth({
+  users: { 'admin': 'admin@aryan' },
+  challenge: true,
+  unauthorizedResponse: 'Unauthorized Access! Please provide valid credentials.'
 });
 
-const Contact = mongoose.model("Contact", contactSchema);
-
-// ✅ API route
-app.post("/api/contact", async (req, res) => {
-  try {
-    const { name, email, message } = req.body;
-    if (!name || !email || !message) {
-      return res.status(400).json({ error: "All fields are required" });
-    }
-
-    const contact = new Contact({ name, email, message });
-    await contact.save();
-
-    console.log("💾 Contact saved:", name, email);
-    res.json({ success: true, message: "Contact saved successfully" });
-  } catch (err) {
-    console.error("Error saving contact:", err);
-    res.status(500).json({ error: "Server error" });
-  }
+// -------------------- ADMIN ROUTE --------------------
+app.get('/admin', authMiddleware, (req, res) => {
+  res.send('Welcome to the admin panel!');
 });
 
+// -------------------- TEST ROUTE --------------------
 app.get("/", (req, res) => {
   res.json({ message: "✅ API running" });
 });
 
+// -------------------- ERROR HANDLER --------------------
 app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).json({ message: "Server error", error: err.message });
 });
 
-app.listen(PORT, () => console.log(`🚀 Server running on http://localhost:${PORT}`));
+app.get('/api/feedback', async (req, res) => {
+  try {
+    const feedbacks = await Feedback.find().sort({ createdAt: -1 });
+    res.json(feedbacks);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
+
+// Update feedback status
+app.put('/api/feedback/:id', async (req, res) => {
+  try {
+    const { status } = req.body;
+    const updatedFeedback = await Feedback.findByIdAndUpdate(
+      req.params.id,
+      { status },
+      { new: true }
+    );
+    
+    if (!updatedFeedback) {
+      return res.status(404).json({ message: 'Feedback not found' });
+    }
+    
+    res.json(updatedFeedback);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
+// Send reply to feedback
+
+
+// -------------------- MONGODB SETUP & START SERVER --------------------
+mongoose
+  .connect("mongodb://127.0.0.1:27017/portfolio")
+  .then(() => {
+    console.log("✅ MongoDB Connected");
+
+    app.listen(PORT, () => {
+      console.log(`🚀 Server running on http://localhost:${PORT}`);
+    });
+  })
+  .catch((err) => {
+    console.error("❌ MongoDB connection error:", err);
+  });

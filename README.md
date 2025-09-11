@@ -1,70 +1,121 @@
-# Getting Started with Create React App
+# 🌐 Personal Portfolio Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A **full-stack personal portfolio website** built with **React.js (frontend)** and **Node.js + Express + MongoDB (backend)**. It showcases my skills, education, projects, and includes a **contact form** that stores messages in a MongoDB database.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Features
+- Responsive modern UI with React.js
+- Sections: Home, About, Education, Projects, Contact
+- Contact form integrated with MongoDB (saves user messages)
+- Node.js & Express REST API for backend communication
+- Deployed frontend + backend
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🛠️ Tech Stack
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Frontend
+- React.js
+- React Router
+- TailwindCSS / CSS Modules
+- Fetch API for backend communication
 
-### `npm test`
+### Backend
+- Node.js
+- Express.js
+- MongoDB with Mongoose
+- CORS & dotenv for configuration
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 📂 Project Structure
+```
+portfolio/
+│── backend/            # Node.js + Express backend
+│   ├── models/         # Mongoose models (Contacts)
+│   ├── routes/         # API routes
+│   ├── server.js       # Entry point for backend
+│
+│── frontend/           # React frontend
+│   ├── src/
+│   │   ├── pages/      # Pages (Home, Contact, etc.)
+│   │   ├── components/ # Reusable components
+│   │   ├── App.js      # Main React app
+│   │   └── index.js    # Entry point
+│
+└── README.md
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## ⚡ Setup Instructions
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 1️⃣ Clone the Repository
+```bash
+git clone https://github.com/aryangithub02/portfolio.git
+cd portfolio
+```
 
-### `npm run eject`
+### 2️⃣ Setup Backend
+```bash
+cd backend
+npm install
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+# Create a .env file
+MONGO_URI=your_mongodb_connection_string
+PORT=3001
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+npm start
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 3️⃣ Setup Frontend
+```bash
+cd frontend
+npm install
+npm start
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 4️⃣ Open in Browser
+```
+http://localhost:5000
+```
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 📬 API Endpoint
+- **POST /api/contact** → Saves contact form data (name, email, message) to MongoDB.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Example:
+```json
+{
+  "name": "Aryan Motghare",
+  "email": "aryanmotghare92@gmail.com",
+  "message": "Hello, this is a test message!"
+}
+```
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 📸 Screenshots
+_Add screenshots of your portfolio UI here_
+![alt text](image.png)
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 📤 Deployment
+- Frontend: Vercel / Netlify
+- Backend: Render / Railway / Heroku
+- Database: MongoDB Atlas
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 👨‍💻 Author
+- **Aryan Motghare**
+- [LinkedIn](https://linkedin.com/in/aryan-motghare)
+- [GitHub](https://github.com/aryangithub02)
+- [Portfolio](https://aryanmotghareresume.netlify.app/)
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+✨ Thank you for checking out my portfolio!

@@ -32,7 +32,8 @@ import githubdetLogo from '../assets/Projects_Logo/ai.png';
 import csprepLogo from '../assets/Projects_Logo/quiz.png';
 import movierecLogo from '../assets/Projects_Logo/finance.png';
 import npmLogo from '../assets/Projects_Logo/map.png';
-
+import blogLogo from '../assets/Projects_Logo/blog.png';
+import chatBot from '../assets/Projects_Logo/Chatbot.png';
 export const SkillsInfo = [
     {
       title: 'Frontend',
@@ -102,23 +103,24 @@ export const SkillsInfo = [
     
     export const education = [
       {
-        id: 0,
-        img: SSCLogo,
-        school: "New English High School and Junior College, Nagpur",
-        date: " March 2021",
-        grade: "88%",
-        desc: "I have completed my Master's Hsc from New English High School and Junior College, Nagpur. During my time at NEHS, I gained a strong foundation in programming, software development, and computer science principles. I have studied courses such as Data Structures, Algorithms, Object-Oriented Programming, Database Management Systems, Web Development, and Software Engineering. I actively participated in various workshops and technical events, which enhanced my skills and knowledge. My experience at GLA University has been instrumental in shaping my technical abilities and professional growth.",
-        degree: "SSC Exams",
-      },
-      {
-        id: 1,
-        img: HSCLogo,
-        school: "ST. George College jr/sr",
-        date: "Feb 2023",
-        grade: "76.2%",
-        desc: "I completed my Bachelor's degree in Computer Science (B.Sc.) from BSA College, Mathura. Throughout my studies, I was immersed in a variety of subjects that deepened my understanding of computing and technology. From exploring Data Structures and Algorithms to diving into Web Development and Database Management Systems, I gained practical insights into the world of software development. My time at BSA College allowed me to work on projects that applied theoretical concepts to real-world problems.",
-        degree: "HSC Exams",
-      }
+        
+          id: 0,
+          img: SSCLogo,
+          school: "New English High School and Junior College, Nagpur",
+          date: "March 2021",
+          grade: "88%",
+          desc: "I successfully completed my SSC (10th standard) from New English High School and Junior College, Nagpur. This stage laid a strong academic foundation and helped me develop discipline, problem-solving skills, and curiosity towards science and technology.",
+          degree: "SSC Exams",
+        },
+        {
+          id: 1,
+          img: HSCLogo,
+          school: "St. George College (Junior/Senior), Nagpur",
+          date: "Feb 2023",
+          grade: "76.2%",
+          desc: "I completed my HSC (12th standard) with a focus on the Science stream. During this time, I developed strong analytical and logical reasoning skills, while also gaining exposure to computer science fundamentals that sparked my interest in programming and software development.",
+          degree: "HSC Exams",
+        },        
     ];
     
     export const projects = [
@@ -157,5 +159,23 @@ export const SkillsInfo = [
         image: npmLogo,
         tags: ["React JS","Handlebars", "Node.js", "NPM", "Validation"],
         github: "https://github.com/aryangithub02/Go-flow",
-      }
+      },
+      {
+        id: 4,
+        title: "InsightHub",
+        description:
+          "A professional blogging platform that allows users to create, manage, and share posts with a clean interface, markdown support, and modern publishing features.",
+        image: blogLogo, // 🖼 Replace this with your blog app logo/image import
+        tags: ["React.js", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
+        github: "https://github.com/aryangithub02/InsightHub", // 🔗 Update with actual repo link
+      },
+      {
+        id: 5,
+        title: "Visionary AI",
+        description:
+          "AI Chat Assistant is a sleek, browser-based chat application designed for seamless and engaging AI-powered conversations. It provides an intuitive interface, persistent chat history, and a modern, gradient-based UI for a smooth user experience.",
+        image: chatBot, // 🖼 Replace this with your blog app logo/image import
+        tags: ["React.js", "Node.js", "Gemini API","Express", "Axios", "Tailwind CSS"],
+        github: "https://github.com/aryangithub02/InsightHub", // 🔗 Update with actual repo link
+      },
     ];  

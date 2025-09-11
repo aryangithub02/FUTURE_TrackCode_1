@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { FaEnvelope, FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -92,41 +92,31 @@ export default function Contact() {
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
                 <FaEnvelope className="text-blue-400 w-5 h-5" />
-                <span className="text-gray-300">your.email@example.com</span>
+                <span className="text-gray-300">aryanmotghare92@gmail.com</span>
               </div>
               <div className="flex items-center space-x-3">
                 <FaGithub className="text-blue-400 w-5 h-5" />
                 <a
-                  href="https://github.com/yourgithub"
+                  href="https://github.com/aryangithub02"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-300 hover:text-blue-400"
                 >
-                  github.com/yourgithub
+                  github.com/aryangithub02
                 </a>
               </div>
               <div className="flex items-center space-x-3">
                 <FaLinkedin className="text-blue-400 w-5 h-5" />
                 <a
-                  href="https://linkedin.com/in/yourlinkedin"
+                  href="https://linkedin.com/in/aryan-motghare"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-300 hover:text-blue-400"
                 >
-                  linkedin.com/in/yourlinkedin
+                  linkedin.com/in/aryan-motghare
                 </a>
               </div>
-              <div className="flex items-center space-x-3">
-                <FaTwitter className="text-blue-400 w-5 h-5" />
-                <a
-                  href="https://twitter.com/yourtwitter"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-300 hover:text-blue-400"
-                >
-                  @yourtwitter
-                </a>
-              </div>
+           
             </div>
           </div>
         </motion.div>
