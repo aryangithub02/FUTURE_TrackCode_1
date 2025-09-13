@@ -71,7 +71,9 @@ app.put('/api/feedback/:id', async (req, res) => {
 });
 
 // Send reply to feedback
-
+app.get("/health", (req, res) => {
+  res.json({ status: "ok", message: "Backend is running 🚀" });
+});
 
 // -------------------- MONGODB SETUP & START SERVER --------------------
 mongoose
