@@ -8,7 +8,7 @@ import feedbackRoutes from './routes/feedbacks.js';  // MongoDB feedback routes
 
 const app = express();
 const PORT = 4000; // Backend port
-
+const MONGO_URI = process.env.MONGO_URI;
 // -------------------- MIDDLEWARE --------------------
 app.use(cors());
 app.use(express.json());
